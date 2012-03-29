@@ -54,7 +54,7 @@ Hmmm that's interesting! Heroku doesn't have a place for persistent data across 
 
 10. Start jetty with:
 
-  `mvn -P localhost jetty:run`
+  `mvn -Plocalhost jetty:run`
 
 11. Commit the changes, and then push, by running:
 
