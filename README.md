@@ -63,7 +63,7 @@ How to get started
 
 8. You must have to export the following variable into your system (just a path to store Neo4j data):
 
-  * export OPENSHIFT_DATA_DIR=/some/dir/related/to/your/project/maybe
+  * `export OPENSHIFT_DATA_DIR=/some/dir/related/to/your/project/maybe`
 
 9. Start jetty with:
 
