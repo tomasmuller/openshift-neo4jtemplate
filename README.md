@@ -1,8 +1,16 @@
-Sources:
-http://groups.google.com/group/neo4j/browse_thread/thread/c39029d81a72aafe
+Neo4j Template for OpenShift
+----------------------------
+This is a blank application whose intent is to serve as a template 
+to build another web applications with the following base stack:
 
---
+  * Neo4j Graph Database
+  * Spring Framework
+  * Spring Web MVC
+  * Spring Data Neo4j
 
+
+How to get started
+------------------
 1. [Create your OpenShift account](https://openshift.redhat.com/app)
 
 2. `gem install rhc`
@@ -22,9 +30,9 @@ http://groups.google.com/group/neo4j/browse_thread/thread/c39029d81a72aafe
   `rhc-create-app -a <yourappname> -t jbossas-7 -l <your rhc login>`
 
   Note somewhere this important output information:
-  
-    * neo4jtemplate published:  http://neo4jtemplate-codenroll.rhcloud.com/
-    * git url: full address to your git repository
+
+  * neo4jtemplate published:  http://neo4jtemplate-codenroll.rhcloud.com/
+  * git url: full address to your git repository
 
 7. Update your recently created app repository with:
 
