@@ -35,8 +35,8 @@ For example: in Repo layout explanation, we have this line:
 Hmmm that's interesting! Heroku doesn't have a place for persistent data across Heroku's dynos.
 (as said by James Ward here: http://stackoverflow.com/questions/7952324/heroku-worker-dyno-produces-file-how-to-read-it-from-web-dyno)
 
-9. To test the app with `mvn -P localhost jetty:run`, you must have to export the following variable:
+9. To test the app with `mvn -P localhost jetty:run`, you must have to export the following variable into your system:
 
   export OPENSHIFT_DATA_DIR=/some/dir/related/to/your/project/maybe
 
-
+10. 
