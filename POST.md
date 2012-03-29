@@ -27,7 +27,7 @@ http://groups.google.com/group/neo4j/browse_thread/thread/c39029d81a72aafe
 
 7. Clone your recently created app.
 
-8. If you are new to OpenShift (like me), read the default README file. It will help you a lot.
+8. If you are new to OpenShift, read the default README file. It will help you a lot.
 For example: in Repo layout explanation, we have this line:
 
   ../data - For persistent data (also in env var OPENSHIFT_DATA_DIR)
@@ -35,4 +35,8 @@ For example: in Repo layout explanation, we have this line:
 Hmmm that's interesting! Heroku doesn't have a place for persistent data across Heroku's dynos.
 (as said by James Ward here: http://stackoverflow.com/questions/7952324/heroku-worker-dyno-produces-file-how-to-read-it-from-web-dyno)
 
-9. 
+9. To test the app with `mvn -P localhost jetty:run`, you must have to export the following variable:
+
+  export OPENSHIFT_DATA_DIR=/some/dir/related/to/your/project/maybe
+
+

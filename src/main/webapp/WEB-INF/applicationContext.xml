@@ -19,4 +19,9 @@ http://www.springframework.org/schema/data/neo4j http://www.springframework.org/
 
   <tx:annotation-driven mode="proxy"/>
 
+  <neo4j:config storeDirectory="${OPENSHIFT_DATA_DIR}/graph.db"/>
+  <neo4j:repositories base-package="br.com.tomasmuller.neo4jtemplate.repositories"/>
+
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
+
 </beans>
