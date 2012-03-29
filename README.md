@@ -59,7 +59,11 @@ How to get started
 
   * `cd <yourappname>`
   * `git remote add upstream -m master git://github.com/tomasmuller/openshift-neo4jtemplate.git`
+  * `git checkout -b template`
   * `git pull -s recursive -X theirs upstream master`
+  * `git checkout master`
+  * `git merge template`
+  * `git branch -D template`
 
 8. You must have to export the following variable into your system (just a path to store Neo4j data):
 
@@ -75,4 +79,4 @@ How to get started
   * `git push`
 
 
-And have fun with Neo4j in OpenShift!
+And have fun with Neo4j at OpenShift!
