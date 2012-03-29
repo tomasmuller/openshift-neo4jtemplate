@@ -11,4 +11,14 @@ public class WelcomeController {
     return "welcome/index";
   }
 
+  @RequestMapping(value = "/health", method = RequestMethod.GET)
+  public String health() {
+    return "welcome/health";
+  }
+
+  @RequestMapping(value = "/snoop", method = RequestMethod.GET)
+  public String snoop() {
+    return "welcome/snoop";
+  }
+
 }
