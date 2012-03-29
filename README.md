@@ -1,6 +1,6 @@
 Neo4j Template for OpenShift
 ----------------------------
-This is a blank application whose intent is to serve as a template 
+This is a blank application whose intent is to serve as a template
 to build another web applications with the following base stack:
 
   * Neo4j Graph Database
@@ -12,7 +12,7 @@ to build another web applications with the following base stack:
 How it works
 ------------
 It's very easy to get Neo4j running on RedHat's OpenShift Cloud Platform.
-At the time of writing this, there is no Neo4j cartridge available at OpenShift.
+Note that at the time of writing this, there is no Neo4j cartridge available at OpenShift.
 
 If you are familiar with Heroku, think that a cartridge is like a Heroku Add-on.
 It plugs functionality into the PaaS environment.
@@ -20,17 +20,17 @@ It plugs functionality into the PaaS environment.
 So, how we can use Neo4j at OpenShift?
 First, remember to always read a README file, if there's one.
 
-When you create a project at OpenShift, a README file exists in root directory.
+When you create a project at OpenShift, a README file can be located at the root directory of your app.
 Among other things, we have this line:
 
   ../data - For persistent data (also in env var OPENSHIFT_DATA_DIR)
-  
-Hmmm *that's* interesting! Heroku doesn't have a place for persistent data across Heroku's dynos. 
+
+Hmmm *that's* interesting! Heroku doesn't have a place for persistent data across Heroku's dynos.
 They are ephemeral, [as said by James Ward, here](http://stackoverflow.com/questions/7952324/heroku-worker-dyno-produces-file-how-to-read-it-from-web-dyno).
 
 From now on, you can guess what to do, right?
 
-The answer is inside Spring's `applicationContext.xml`:
+The answer is inside of Spring `applicationContext.xml` file:
 
   `<neo4j:config storeDirectory="${OPENSHIFT_DATA_DIR}/graph.db"/>`
 
@@ -81,4 +81,3 @@ How to get started
 
 
 And have fun with Neo4j in OpenShift!
-
