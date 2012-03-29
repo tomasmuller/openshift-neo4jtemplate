@@ -55,11 +55,6 @@ How to get started
 
   * `rhc-create-app -a <yourappname> -t jbossas-7 -l <your rhc login>`
 
-  Note somewhere this important output information:
-
-  * neo4jtemplate published:  http://neo4jtemplate-codenroll.rhcloud.com/
-  * git url: full address to your git repository
-
 7. Update your recently created app repository with:
 
   * `cd <yourappname>`
