@@ -26,7 +26,7 @@ Among other things, we have this line:
   ../data - For persistent data (also in env var OPENSHIFT_DATA_DIR)
 
 Hmmm *that's* interesting! Heroku doesn't have a place for persistent data across Heroku's dynos.
-They are ephemeral, [as said by James Ward, here](http://stackoverflow.com/questions/7952324/heroku-worker-dyno-produces-file-how-to-read-it-from-web-dyno).
+They are ephemeral, [as said by James Ward, here](http://stackoverflow.com/questions/7952324/heroku-worker-dyno-produces-file-how-to-read-it-from-web-dyno#comment9723310_7952737).
 
 From now on, you can guess what to do, right?
 
