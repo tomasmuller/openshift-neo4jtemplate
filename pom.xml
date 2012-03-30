@@ -36,7 +36,6 @@
   </repositories>
 
   <dependencies>
-
     <!-- Neo4j dependencies -->
     <dependency>
       <groupId>org.neo4j</groupId>
@@ -62,6 +61,12 @@
         <artifactId>hibernate-jpa-2.0-api</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-neo4j-aspects</artifactId>
+      <version>${spring-data-neo4j.version}</version>
     </dependency>
 
     <!-- Spring Framework dependencies -->
@@ -190,8 +195,56 @@
       <version>${log4j.version}</version>
       <scope>runtime</scope>
     </dependency>
-
   </dependencies>
+
+  <!-- Common plugins between profiles -->
+  <build>
+    <plugins>
+      <!-- advanced mapping uses AspectJ for build-time aspect weaving of entities -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>aspectj-maven-plugin</artifactId>
+        <version>1.2</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectjrt.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+            <version>${aspectjrt.version}</version>
+          </dependency>
+        </dependencies>
+
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>test-compile</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <configuration>
+          <outxml>true</outxml>
+          <aspectLibraries>
+            <aspectLibrary>
+              <groupId>org.springframework</groupId>
+              <artifactId>spring-aspects</artifactId>
+            </aspectLibrary>
+            <aspectLibrary>
+              <groupId>org.springframework.data</groupId>
+              <artifactId>spring-data-neo4j-aspects</artifactId>
+            </aspectLibrary>
+          </aspectLibraries>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <profiles>
     <profile>
@@ -236,6 +289,5 @@
         </plugins>
       </build>
     </profile>
-        
   </profiles>
 </project>
