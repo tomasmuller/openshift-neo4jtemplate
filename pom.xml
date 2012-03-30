@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <version>1.0</version>
   <name>neo4jtemplate</name>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.6</maven.compiler.source>
@@ -43,7 +43,7 @@
       <version>${neo4j.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
-    </dependency>  
+    </dependency>
     <dependency>
       <groupId>org.neo4j</groupId>
       <artifactId>neo4j-cypher</artifactId>
@@ -57,8 +57,8 @@
       <version>${spring-data-neo4j.version}</version>
       <exclusions>
         <exclusion>
-        <groupId>org.hibernate.javax.persistence</groupId>
-        <artifactId>hibernate-jpa-2.0-api</artifactId>
+          <groupId>org.hibernate.javax.persistence</groupId>
+          <artifactId>hibernate-jpa-2.0-api</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
@@ -79,7 +79,7 @@
           <groupId>commons-logging</groupId>
           <artifactId>commons-logging</artifactId>
         </exclusion>
-      </exclusions>      
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -164,7 +164,7 @@
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
-    </dependency>    
+    </dependency>
 
     <dependency>
       <groupId>org.hibernate</groupId>
@@ -182,13 +182,13 @@
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
       <version>${slf4j.version}</version>
-      </dependency>
+    </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
       <version>${slf4j.version}</version>
       <scope>runtime</scope>
-      </dependency>
+    </dependency>
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
@@ -248,12 +248,12 @@
 
   <profiles>
     <profile>
-     <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
-     <!-- Use this profile for any OpenShift specific customization your app will need. -->
-     <!-- By default that is to put the resulting archive into the 'deployments' folder. -->
-     <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
-     <id>openshift</id>
-     <build>
+      <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
+      <!-- Use this profile for any OpenShift specific customization your app will need. -->
+      <!-- By default that is to put the resulting archive into the 'deployments' folder. -->
+      <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
+      <id>openshift</id>
+      <build>
         <finalName>neo4jtemplate</finalName>
         <plugins>
           <plugin>
@@ -269,12 +269,11 @@
     </profile>
 
     <profile>
-     <id>localhost</id>
-     <build>
+      <id>localhost</id>
+      <build>
         <finalName>neo4jtemplate</finalName>
         <plugins>
-
-          <!-- jetty:run to start development server -->
+          <!-- `mvn -Plocalhost jetty:run` to start development server -->
           <plugin>
             <groupId>org.mortbay.jetty</groupId>
             <artifactId>jetty-maven-plugin</artifactId>
