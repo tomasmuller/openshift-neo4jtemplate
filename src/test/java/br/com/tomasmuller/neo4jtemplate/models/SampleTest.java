@@ -25,7 +25,7 @@ public class SampleTest {
     }
 
     @Test
-    public void actorCanPlayARoleInAMovie() {
+    public void testSomething() {
         assertEquals("your truth", "your truth");
     }
 
