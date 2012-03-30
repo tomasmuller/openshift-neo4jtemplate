@@ -11,28 +11,7 @@ to build another web applications with the following base stack:
 
 How it works
 ------------
-It's very easy to get Neo4j running on RedHat's OpenShift Cloud Platform.
-Note that at the time of writing this, there is no Neo4j cartridge available at OpenShift.
-
-If you are familiar with Heroku, think that a cartridge is like a Heroku Add-on.
-It plugs functionality into the PaaS environment.
-
-So, how we can use Neo4j at OpenShift?
-First, remember to always read a README file, if there's one.
-
-When you create a project at OpenShift, a README file can be located at the root directory of your app.
-Among other things, we have this line:
-
-  ../data - For persistent data (also in env var OPENSHIFT_DATA_DIR)
-
-Hmmm *that's* interesting! Heroku doesn't have a place for persistent data across Heroku's dynos.
-They are ephemeral, [as said by James Ward, here](http://stackoverflow.com/questions/7952324/heroku-worker-dyno-produces-file-how-to-read-it-from-web-dyno#comment9723310_7952737).
-
-From now on, you can guess what to do, right?
-
-The answer is inside of Spring `applicationContext.xml` file:
-
-  `<neo4j:config storeDirectory="${OPENSHIFT_DATA_DIR}/graph.db"/>`
+Read my [blog post here](http://tomasmuller.com.br/2012/03/29/10-steps-to-run-neo4j-at-redhat-openshift-cloud).
 
 
 How to get started
